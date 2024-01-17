@@ -1,5 +1,7 @@
 <?php
-
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/dashboard', function () {
@@ -29,3 +31,17 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+//หน้า User
+Route::get('admin/user/index',[UserController::class, 'index'])->name('a.index');
+
+//หน้า Category
+Route::get('admin/category/index',[CategoryController::class, 'index'])->name('b.index');
+Route::get('admin/category/create',[CategoryController::class, 'create'])->name('b.create');
+Route::post('admin/category/insert',[CategoryController::class, 'insert']);
+Route::get('admin/category/edit/{id}',[CategoryController::class, 'edit']);
+Route::post('admin/category/update/{id}',[CategoryController::class, 'update']);
+Route::get('admin/category/delete/{id}',[CategoryController::class, 'delete']);
+
+//หน้า Product
+Route::get('admin/product/index',[ProductController::class, 'index'])->name('c.index');
+Route::get('admin/product/create',[ProductController::class, 'create'])->name('c.create');

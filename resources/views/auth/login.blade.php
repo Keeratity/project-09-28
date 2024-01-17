@@ -29,7 +29,7 @@
         		@csrf
 
 		      		<div class="form-group">
-		      			<input type="text" name="username" class="form-control" placeholder="Usernam" required>
+		      			<input type="text" name="username" class="form-control" placeholder="Username" required>
 		      		</div>
 
 	            <div class="form-group">
