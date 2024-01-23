@@ -45,3 +45,4 @@ Route::get('admin/category/delete/{id}',[CategoryController::class, 'delete']);
 //หน้า Product
 Route::get('admin/product/index',[ProductController::class, 'index'])->name('c.index');
 Route::get('admin/product/create',[ProductController::class, 'create'])->name('c.create');
+Route::post('admin/product/insert',[ProductController::class, 'insert']);

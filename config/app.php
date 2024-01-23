@@ -161,6 +161,8 @@ return [
          */
         // SweetAlert แจ้งเตือน
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        // intervention laravel (รูปภาพ)
+        Intervention\Image\ImageServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -186,6 +188,8 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
         'Alert' => RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        // intervention laravel (รูปภาพ)
+        'Image' => Intervention\Image\Facades\Image::class
     ])->toArray(),
 
 ];
