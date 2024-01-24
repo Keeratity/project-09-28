@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('product_id',10)->comment("รหัสสินค้า");
             $table->string('name',255)->comment("ชื่อสินค้า");
-            $table->string('pirce',255)->comment("ราคาสินค้า");
+            $table->string('price',255)->comment("ราคาสินค้า");
             $table->text('description',)->comment("รายละเอียดสินค้า");
             $table->integer('category_id',)->comment("รหัสประเภทสินค้า");
-            $table->string('image',)->comment("รูปภาพ");
+            $table->string('image')->comment("รูปภาพ");
             $table->timestamps();
         });
     }
