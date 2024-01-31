@@ -26,7 +26,7 @@
                                     <td>
                                       <a href="{{ url('admin/category/edit/'.$cat->category_id) }}"><i>แก้ไข</i></a>
                                       <a href="{{ url('admin/category/delete/'.$cat->category_id) }}"><i>ลบ</i></a>
-                                     
+
                                     </td>
                                   </tr>
                                   @endforeach
