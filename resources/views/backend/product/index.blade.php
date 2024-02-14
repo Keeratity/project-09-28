@@ -32,8 +32,8 @@
                                             <td>{{ $pro->created_at }}</td>
                                             <td>{{ $pro->update_at }}</td>
                                         <td>
-                                            <a href="{{ url('admin/product/edit/'.$pro->product_id) }}"><i>แก้ไข</i></a>
-                                      <a href="{{ url('admin/product/delete/'.$pro->product_id) }}"><i>ลบ</i></a>
+                                            <a href="{{ url('admin/product/edit/'.$pro->product_id) }}"class="btn btn-warning">แก้ไข</a>
+                                            <a href="{{ url('admin/product/delete/'.$pro->product_id) }}" class="btn btn-danger">ลบ</a>
                                         </td>
                                     </tr>
                                     @endforeach

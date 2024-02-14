@@ -47,7 +47,7 @@ class CategoryController extends Controller
         $category = Category::find($category_id);
         $category->name = $request->name;
         $category->update();
-        alert()->success('อัพเดทข้อมูลสําเร็จ','ชื่อประเภทสินค้าชื่อนี้ถูกบันทึกลงในระบบฐานข้อมูลเรียบร้อยแล้ว');
+        alert()->success('แก้ไขข้อมูลสําเร็จ','ข้อมูลนี้ถูกอัพเดทแล้ว');
         return redirect()->route('b.index');
 
 

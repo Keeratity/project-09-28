@@ -53,7 +53,7 @@ class ProductController extends Controller
 
     }
     $pro->save();
-    alert()->success('แก้ไขข้อมูลสําเร็จ','ข้อมูลนี้ถูกอัพเดทแล้ว');
+    alert()->success('บันทึกข้อมูลสําเร็จ','ข้อมูลนี้ถูกอัพเดทแล้ว');
     return redirect('admin/product/index');
     }
 
@@ -98,7 +98,7 @@ class ProductController extends Controller
             File::delete(public_path().'/backend/product/resize'.$pro->image);
     }
     $pro->delete();
-    alert()->success('แก้ไขข้อมูลสําเร็จ','ข้อมูลนี้ถูกลบแล้ว');
+    alert()->success('ลบข้อมูลสําเร็จ','ข้อมูลนี้ถูกลบแล้ว');
     return redirect('admin/product/index');
 
 }

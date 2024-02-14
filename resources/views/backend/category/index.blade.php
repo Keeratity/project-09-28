@@ -24,9 +24,8 @@
                                     <td>{{ $cat->created_at }}</td>
                                     <td>{{ $cat->updated_at }}</td>
                                     <td>
-                                      <a href="{{ url('admin/category/edit/'.$cat->category_id) }}"><i>แก้ไข</i></a>
-                                      <a href="{{ url('admin/category/delete/'.$cat->category_id) }}"><i>ลบ</i></a>
-
+                                      <a href="{{ url('admin/category/edit/'.$cat->category_id) }}"class="btn btn-warning">แก้ไข</a>
+                                      <a href="{{ url('admin/category/delete/'.$cat->category_id) }}"class="btn btn-danger">ลบ</a>
                                     </td>
                                   </tr>
                                   @endforeach
