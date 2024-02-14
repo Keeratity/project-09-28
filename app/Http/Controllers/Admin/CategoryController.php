@@ -11,7 +11,7 @@ class CategoryController extends Controller
     public function index(){
         $category = Category::orderBy('category_id','desc')->Paginate(5);
         return view('backend.category.index',compact('category'));
-    }   
+    }
 
     public function create(){
         return view('backend.category.create');
@@ -47,7 +47,7 @@ class CategoryController extends Controller
         $category = Category::find($category_id);
         $category->name = $request->name;
         $category->update();
-        alert()->success('อัพเดทข้อมูลสำเสร็จ','ชื่อประเภทสินค้าชื่อนี้ถูกบันทึกลงในระบบฐานข้อมูลเรียบร้อยแล้ว');
+        alert()->success('อัพเดทข้อมูลสําเร็จ','ชื่อประเภทสินค้าชื่อนี้ถูกบันทึกลงในระบบฐานข้อมูลเรียบร้อยแล้ว');
         return redirect()->route('b.index');
 
 
@@ -56,7 +56,7 @@ class CategoryController extends Controller
     public function delete($category_id){
         $category = Category::find($category_id);
         $category->delete();
-        alert()->success('ลบข้อมูลสำเสร็จ','ลบข้อมูลเรียบร้อยแล้ว');
+        alert()->success('ลบข้อมูลสําเร็จ','ลบข้อมูลเรียบร้อยแล้ว');
         return redirect()->route('b.index');
     }
 

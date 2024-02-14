@@ -8,7 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+
 	<link rel="stylesheet" href="{{ asset('authen/css/style.css') }}">
 
 	</head>
@@ -42,7 +42,7 @@
 	            </div>
 
 	            <div class="form-group d-md-flex">
-	            	
+
 								<div class="w-50 text-md-left">
 									<a href="{{ route('password.request') }}" style="color: #fff">Forgot Password</a>
 								</div>
@@ -51,15 +51,7 @@
 									<a href="{{ route('register') }}" style="color: #fff">Sing up now</a>
 								</div>
 	            </div>
-	        </form>
-	          <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
-	          <div class="social d-flex text-center">
-	          	<a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
-	          	<a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
-	          </div>
-		      </div>
-				</div>
-			</div>
+
 		</div>
 	</section>
 
