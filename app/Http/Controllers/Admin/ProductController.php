@@ -25,6 +25,7 @@ class ProductController extends Controller
         $validate = $request->validate([
             'name'=>'required|max:255',
             'price'=>'required|max:255',
+            'number'=>'required|numeric',
             'description'=>'required',
             'image'=>'mimes:png,jpg,jpeg',
         ],[
@@ -32,6 +33,8 @@ class ProductController extends Controller
             'name.max'=>'กรอกข้อมูลได้สูงสุด 255 ตัวอักษร',
             'price.required'=>'กรุณากรอกข้อมูลราคาสินค้า',
             'price.max'=>'กรอกข้อมูลได้สูงสุด 255 ตัวอักษร',
+            'number.required'=>'กรุณากรอกข้อมูลจำนวนสินค้า',
+            'number.numeric'=>'กรอกข้อมูลได้เฉพาะตัวเลขจำนวนเต็มเท่านั้น',
             'description.required'=>'กรอกข้อมูลรายละเอียดสินค้า',
             'image.mimes'=>'อัพโหลดภาพที่มีนามสกุล .jpg .jpeg .png ได้เท่านั้น',
         ]);
@@ -39,6 +42,7 @@ class ProductController extends Controller
        $pro = new Product ();
        $pro->name = $request->name;
        $pro->price = $request->price;
+       $pro->number = $request->number;
        $pro->description = $request->description;
        $pro->category_id = $request->category_id;
        if($request->hasFile('image')){
@@ -59,15 +63,16 @@ class ProductController extends Controller
 
 
 
-    public function edit($products_id){
-    $pro = Product::find($products_id);
+    public function edit($product_id){
+    $pro = Product::find($product_id);
     $cat = Category::all();
     return view('backend.product.edit',compact('pro','cat'));
     }
 
-    public function update(Request $request, $products_id){
-        $pro = Product::find($products_id);
+    public function update(Request $request, $product_id){
+        $pro = Product::find($product_id);
         $pro->name = $request->name;
+        $pro->number = $request->number;
        $pro->price =$request->price;
        $pro->description = $request->description;
        $pro->category_id = $request->category_id;
@@ -91,8 +96,8 @@ class ProductController extends Controller
 
 
     }
-    public function delete($products_id){
-        $pro = Product::find($products_id);
+    public function delete($product_id){
+        $pro = Product::find($product_id);
         if($pro->image != 'no_image.jpg'){
             File::delete(public_path().'/backend/product/'.$pro->image);
             File::delete(public_path().'/backend/product/resize'.$pro->image);

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Papanilas</title>
+  <title>Wedding Cafe</title>
   <link rel="shortcut icon" type="image/png" href="{{ asset('backend/images/logos/favicon.png')}}" />
   <link rel="stylesheet" href="{{ asset('backend/css/styles.min.css')}}" />
 </head>
@@ -19,8 +19,8 @@
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
-            <img src="{{ asset('/images/logos/dark-logo.svg')}}" width="180" alt="" />
+            <a href="{{ route('dashboard')}}" class="text-nowrap logo-img">
+            <H1>Wedding Cafe</H1>
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -44,7 +44,7 @@
             <li class="sidebar-item">
                 <a href="{{ route('a.index')}} "class="sidebar-link"  aria-expanded="false">
                 <span>
-                  <i class="ti ti-layout-dashboard"></i>
+                    <i class="ti ti-mood-happy"></i>
                 </span>
                 <span class="hide-menu">User</span>
               </a>
@@ -53,7 +53,7 @@
             <li class="sidebar-item">
                 <a href="{{ route('b.index')}} "class="sidebar-link"  aria-expanded="false">
                 <span>
-                  <i class="ti ti-layout-dashboard"></i>
+                  <i class="ti ti-article"></i>
                 </span>
                 <span class="hide-menu">Category</span>
               </a>
@@ -61,11 +61,16 @@
             <li class="sidebar-item">
                 <a href="{{ route('c.index')}} "class="sidebar-link"  aria-expanded="false">
                 <span>
-                  <i class="ti ti-layout-dashboard"></i>
+                  <i class="ti ti-file-description"></i>
                 </span>
                 <span class="hide-menu">Product</span>
               </a>
             </li>
+            <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu"></span>
+              </li>
+
         </nav>
         <!-- End Sidebar navigation -->
       </div>
@@ -83,12 +88,6 @@
                 <i class="ti ti-menu-2"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link nav-icon-hover" href="javascript:void(0)">
-                <i class="ti ti-bell-ringing"></i>
-                <div class="notification bg-primary rounded-circle"></div>
-              </a>
-            </li>
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
@@ -102,14 +101,6 @@
                     <a href="{{route('profile.edit')}}" href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
                       <i class="ti ti-user fs-6"></i>
                       <p class="mb-0 fs-3">My Profile</p>
-                    </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-mail fs-6"></i>
-                      <p class="mb-0 fs-3">My Account</p>
-                    </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-list-check fs-6"></i>
-                      <p class="mb-0 fs-3">My Task</p>
                     </a>
                     <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -129,10 +120,10 @@
       </header>
       <!--  Header End -->
       <div class="container-fluid">
-        
+
 
         @yield('contet')
-               
+
               </div>
             </div>
           </div>

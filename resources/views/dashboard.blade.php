@@ -13,7 +13,7 @@
 
                             </div>
                             <span class="fw-semibold d-block mb-1" >User</span>
-                            <h3 class="card-title mb-2" style="color:grey"> {{ $user->count() }} คน</h3>
+                            <h3 class="card-title mb-2" style="color:grey"> {{ $u->count() }} คน</h3>
                         </div>
                     </div>
 
@@ -25,7 +25,7 @@
                             <div class="card-title d-flex align-items-start justify-content-between">
                             </div>
                             <span class="fw-semibold d-block mb-1">Category</span>
-                            <h3 class="card-title mb-2" style="color:grey"> {{ $catgory->count() }} ประเภท</h3>
+                            <h3 class="card-title mb-2" style="color:grey"> {{ $c->count() }} ประเภท</h3>
                         </div>
                     </div>
 
@@ -39,7 +39,7 @@
 
                             </div>
                             <span class="fw-semibold d-block mb-1">Product</span>
-                            <h3 class="card-title mb-2" style="color:grey"> {{ $product->count() }} ชิ้น</h3>
+                            <h3 class="card-title mb-2" style="color:grey"> {{ $p->count() }} ชิ้น</h3>
                         </div>
                     </div>
 

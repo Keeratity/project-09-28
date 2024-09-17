@@ -6,7 +6,7 @@
                               <div class="card mb-9">
                                 <h5 class="card-header">Edit</h5>
                                 <div class="card-body">
-                                <form action="{{ url('admin/product/update/'.$pro->products_id) }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ url('admin/product/update/'.$pro->product_id) }}" method="post" enctype="multipart/form-data">
                                   @csrf
                                   <div>
                                     <label for="defaultFormControlInput" class="form-label">Name</label>
@@ -38,6 +38,22 @@
                                     />
                                     <div class="mt-3">
                                         @error('Price')
+                                        <div class="alert alert-danger">{{$message}}</div>
+                                        @enderror
+                                    </div>
+
+                                    <label for="defaultFormControlInput" class="form-label">Number</label>
+                                    <input
+                                      type="text"
+                                      name="number"
+                                      value="{{ $pro->number}}"
+                                      class="form-control"
+                                      id="defaultFormControlInput"
+                                      placeholder="กรุณากรอกจำนวนสินค้า"
+                                      aria-describedby="defaultFormControlHelp"
+                                    />
+                                    <div class="mt-3">
+                                        @error('number')
                                         <div class="alert alert-danger">{{$message}}</div>
                                         @enderror
                                     </div>

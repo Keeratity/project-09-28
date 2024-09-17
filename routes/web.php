@@ -1,9 +1,13 @@
 <?php
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\promote\PromoteController;
+use App\Models\User;
+use App\Models\Category;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +19,24 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [PromoteController::class, 'index'])->name('promote.index');
+Route::get('menu', [PromoteController::class, 'menu'])->name('promote.menu');
+Route::get('gallery', [PromoteController::class, 'gallery'])->name('promote.gallery');
+Route::get('about', [PromoteController::class, 'about'])->name('promote.about');
+Route::get('contact', [PromoteController::class, 'contact'])->name('promote.contact');
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('auth.login');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+
+    $c = Category::all();
+    $p = Product::all();
+    $u = User::all();
+
+    return view('dashboard',compact('c','p','u'));
+
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -31,6 +46,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
 //หน้า User
 Route::get('admin/user/index',[UserController::class, 'index'])->name('a.index');
 

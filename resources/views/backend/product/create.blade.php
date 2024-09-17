@@ -39,6 +39,20 @@
                                         <div class="alert alert-danger">{{$message}}</div>
                                         @enderror
                                     </div>
+                                    <label for="defaultFormControlInput" class="form-label">Number</label>
+                                    <input
+                                      type="text"
+                                      name="number"
+                                      class="form-control"
+                                      id="defaultFormControlInput"
+                                      placeholder="กรุณากรอกจำนวนสินค้า"
+                                      aria-describedby="defaultFormControlHelp"
+                                    />
+                                    <div class="mt-3">
+                                        @error('number')
+                                        <div class="alert alert-danger">{{$message}}</div>
+                                        @enderror
+                                    </div>
 
                                     <label for="defaultFormControlInput" class="form-label">Description</label>
                                     <input

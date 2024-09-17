@@ -8,7 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+
 	<link rel="stylesheet" href="{{ asset('authen/css/style.css') }}">
 
 	</head>
@@ -17,14 +17,14 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Do you forgot?</h2>
+					<h2 class="heading-section">Do you forget?</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">Reset now</h3>
-			
+
 				  <x-auth-session-status class="mb-4 text-success" :status="session('status')" />
 
 		    <form class="signin-form" method="POST" action="{{ route('password.email') }}">
@@ -41,13 +41,13 @@
 	            </div>
 
 	            <div class="form-group d-md-flex">
-	            	
-					
+
+
 	            </div>
 	        </form>
 	          <p class="w-100 text-center">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
 	          <div class="social d-flex text-center">
-	          	
+
 		      </div>
 				</div>
 			</div>

@@ -55,6 +55,10 @@ class CategoryController extends Controller
 
     public function delete($category_id){
         $category = Category::find($category_id);
+        if ($category->product->count()>0){
+            alert()->error('ไม่สามารถลบประเภทสินค้าได้','เนื่องจากมีสินค้าอยู่ในประเภทนี้');
+            return redirect()->back();
+        }
         $category->delete();
         alert()->success('ลบข้อมูลสําเร็จ','ลบข้อมูลเรียบร้อยแล้ว');
         return redirect()->route('b.index');

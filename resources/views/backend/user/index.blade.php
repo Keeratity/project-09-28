@@ -4,20 +4,22 @@
                         <div class="card">
                             <h5 class="card-header">User</h5>
                             <div class="table-responsive text-nowrap">
-                              <table class="table">
-                                <thead class="table-dark">
-
-                                </thead>
-                                <tbody class="table-border-bottom-0">
+                                <table class="table mt-4">
+                                    <thead class="table-dark">
+                                      <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody class="table-border-bottom-0">
                                 @foreach ($user as $u)
                                   <tr>
                                   <td>{{ $u->id }}</td>
                                   <td>{{ $u->name }}</td>
                                   <td>{{ $u->email }}</td>
                                   <td>{{ $u->phone }}</td>
-                                  <td>
-
-                                  </td>
                                   </tr>
                                   @endforeach
                                 </tbody>
